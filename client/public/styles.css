@@ -25,11 +25,19 @@ header h1 {
   font-weight: 200;
 }
 
+.logout-icon, 
+.logout-icon:hover {
+  color: white;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
+
 footer {
   position: absolute;
   text-align: center;
   bottom: 0;
-  width: 100%;
+  width: 95%;
   height: 2.5rem;
 }
 
@@ -101,4 +109,41 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+form.login {
+  position: relative;
+  width: 480px;
+  margin: 30vh auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.login input,
+form.login button {
+  width: 100%;
+  border: none;
+  padding: 25px 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  border-radius: 15px;
+  resize: none;
+}
+form.login button:hover {
+  background: #f5ba13;
+  color: #fff;
+}
+form.login a {
+  color: #f5ba13;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+
+.res-msg {
+  padding-top: 10px;
+  color: red;
 }
