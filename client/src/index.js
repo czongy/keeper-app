@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, useRoutes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/app/App.jsx";
 import Login from "./components/login/Login.jsx"
 import Register from "./components/login/Register.jsx";

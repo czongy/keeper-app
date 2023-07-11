@@ -19,7 +19,7 @@ app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: true }, //to change to true
+  cookie: { secure: false }, //to change to true
 }));
 app.use(passport.initialize());
 app.use(passport.session());

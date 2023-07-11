@@ -55,7 +55,7 @@ function Login() {
       </form>
       <footer>
         Note to user:
-        The frontend of this app is created as part of The App Brewery course.
+        The frontend of Keeper app is created as part of The App Brewery course.
         I have enhanced the Keeper app by implementing the backend using Node.js, Mongoose, and Passport
       </footer>
     </div>
