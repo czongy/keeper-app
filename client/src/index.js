@@ -4,9 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./components/app/App.jsx";
 import Login from "./components/login/Login.jsx"
 import Register from "./components/login/Register.jsx";
-import { disableReactDevtools } from "@fvilers/disable-react-devtools";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
-if (process.env.NODE_ENV === "production") disableReactDevtools();
+if (process.env.NODE_ENV === "production") disableReactDevTools();
 
 const root = createRoot(document.getElementById("root"));
 
