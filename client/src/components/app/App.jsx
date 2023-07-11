@@ -9,7 +9,7 @@ function App() {
   const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
 
-  fetch("http://keeperappczy-api.onrender.com/app", {credentials: 'include'})
+  fetch("https://keeperappczy-api.onrender.com/app", {credentials: 'include'})
     .then((response) => {
       if (!response.ok) {
         throw new Error("Request failed with status " + response.status);
@@ -30,7 +30,7 @@ function App() {
   function addNote(newNote) {
     setNotes(prevNotes => {
       const addedNotes = [...prevNotes, newNote];
-      fetch("http://keeperappczy-api.onrender.com/app/updatenotes", {
+      fetch("https://keeperappczy-api.onrender.com/app/updatenotes", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include",
@@ -52,7 +52,7 @@ function App() {
       const deletedNotes = prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
-      fetch("http://keeperappczy-api.onrender.com/app/updatenotes", {
+      fetch("https://keeperappczy-api.onrender.com/app/updatenotes", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include",

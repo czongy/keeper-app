@@ -7,7 +7,7 @@ function Header() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    fetch("http://keeperappczy-api.onrender.com/logout", {credentials: 'include'})
+    fetch("https://keeperappczy-api.onrender.com/logout", {credentials: 'include'})
     .then((response) => {
       if (!response.ok) {
         throw new Error("Request failed with status " + response.status);

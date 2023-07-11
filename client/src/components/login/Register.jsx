@@ -19,7 +19,7 @@ function Register() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://keeperappczy-api.onrender.com/register", {
+    fetch("https://keeperappczy-api.onrender.com/register", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(formData),
