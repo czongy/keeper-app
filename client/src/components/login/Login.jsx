@@ -53,11 +53,12 @@ function Login() {
           {resMessage && <p>{resMessage}</p>}
         </div>
       </form>
-      <footer>
-        Note to user:
+      <div className="login-footer">
+        <em>Note to user: There will be delay in the response of the first request after a period of inactivity while the instance spins up.
+        <br />
         The frontend of Keeper app is created as part of The App Brewery course.
-        I have enhanced the Keeper app by implementing the backend using Node.js, Mongoose, and Passport
-      </footer>
+        I have enhanced the Keeper app by implementing the backend using Node.js, Mongoose, and Passport.</em>
+      </div>
     </div>
   );
 }

@@ -44,6 +44,15 @@ footer {
 footer p {
   color: #ccc;
 }
+
+.login-footer {
+  position: absolute;
+  text-align: center;
+  bottom: 5%;
+  width: 95%;
+  height: 2.5rem;
+} 
+
 .note {
   background: #fff;
   border-radius: 7px;
