@@ -12,14 +12,14 @@ const port = process.env.PORT || 8000;
 //Middleware
 app.use(express.json());
 app.use(cors({
-  origin: true,
+  origin: "https://keeperappczy.onrender.com",
   credentials: true,
 }));
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false }, //to change to true
+  cookie: { secure: true },
 }));
 app.use(passport.initialize());
 app.use(passport.session());
