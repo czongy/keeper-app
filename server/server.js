@@ -3,23 +3,35 @@ import session from "express-session";
 import cors from "cors";
 import 'dotenv/config'
 import mongoose from "mongoose";
+import MongoStore from "connect-mongo";
 import passport from "passport";
 import passportLocalMongoose from "passport-local-mongoose";
+import path from "path"
+import { fileURLToPath } from 'url';
 
 const app = express();
 const port = process.env.PORT || 8000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //Middleware
 app.use(express.json());
+app.use(express.static('public'));
 app.use(cors({
   origin: "https://keeperappczy.onrender.com",
   credentials: true,
 }));
+app.set('trust proxy', 1);
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: true },
+  cookie: { secure: true, sameSite: "none" },
+  store: MongoStore.create({
+    mongoUrl: process.env.ATLAS_URI,
+    ttl: 14 * 24 * 60 * 60,
+    autoRemove: 'native'
+  })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,6 +63,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //Handle Requests
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 app.post("/register", (req, res) => {
   User.register({username: req.body.username}, req.body.password, (err, user) => {
     if (err) {
