@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -9,7 +9,8 @@ function App() {
   const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
 
-  fetch("https://keeperappczy-api.onrender.com/app", {credentials: 'include'})
+  useEffect(() => { 
+    fetch("http://localhost:8000/app", {credentials: 'include'})
     .then((response) => {
       if (!response.ok) {
         throw new Error("Request failed with status " + response.status);
@@ -25,7 +26,8 @@ function App() {
     .then((note) => {
       setNotes(note);
     })
-    .catch((err) => console.log("Fetch error", err))
+    .catch((err) => console.log("Fetch error", err));
+  },[navigate]);
 
   function addNote(newNote) {
     setNotes(prevNotes => {
