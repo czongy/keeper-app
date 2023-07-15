@@ -10,7 +10,7 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => { 
-    fetch("http://localhost:8000/app", {credentials: 'include'})
+    fetch("https://keeperappczy-api.onrender.com/app", {credentials: 'include'})
     .then((response) => {
       if (!response.ok) {
         throw new Error("Request failed with status " + response.status);
