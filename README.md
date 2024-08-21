@@ -16,3 +16,6 @@ A simple and efficient note-keeping application built using React for the front 
 - **Database**: MongoDB(Mongoose)
 - **Authentication**: Passport.js, bcrypt
 - **Session Management**: express-session
+
+![Login](client/public/login.png)
+![Main](client/public/main.png)
